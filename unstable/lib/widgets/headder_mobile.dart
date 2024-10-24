@@ -12,7 +12,7 @@ class HeadderMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50.0,
-      margin: const EdgeInsets.fromLTRB(40, 7, 20, 7),
+      margin: const EdgeInsets.fromLTRB(40, 20, 20, 20),
       decoration: HeadderDecoration,
       child: Row(
         children: [
