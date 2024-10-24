@@ -14,53 +14,88 @@ class LoginSignupScreen extends StatelessWidget{
 
   if(!isLogin){
     name = const TextField(
-      decoration: const InputDecoration(
-        hintText: 'Name',
-        hintStyle: TextStyle(color: Colors.white),
-        enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
-        ),
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
-        ),
+      decoration: InputDecoration(
+        labelText: 'Name',
       ),
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.white),
     );
   }
 
   return Scaffold(
     appBar: AppBar(),
     body: Center(
-      child: Container(
-        width: 300,
-        decoration: const BoxDecoration(
-          color: Colors.white10,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SizedBox(height: 40),
-
-            name,
-
-            SizedBox(
-              width: 170, // Set the desired width here
-              height: 45,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: btnStyle,
-                child: Text(
-                  isLogin ? 'Log in' : 'Sign Up',
-                  style: const TextStyle(color: Colors.white),
+      child: Column(
+        children: [
+          
+          const Text('Welcome to',
+              style: TextStyle(
+                fontSize: 34,
+                 fontStyle: FontStyle.italic,
                 ),
+            ),
+
+            const Text('UnsTable',
+              style: TextStyle(
+                fontSize: 38,
+                fontWeight: FontWeight.bold,
               ),
             ),
 
-            const SizedBox(height: 40),
-          ],
+          Container(
+          width: 300,
+          decoration: const BoxDecoration(
+            color: Colors.white10,
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(height: 40),
+            
+                name,
+        
+                const SizedBox(height: 20),
+        
+                const TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                  ),
+                  style: TextStyle(color: Colors.white),
+                ),
+        
+                const SizedBox(height: 20),
+        
+                const TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                  ),
+                  style: TextStyle(color: Colors.white),
+                ),
+        
+                const SizedBox(height: 20),
+            
+                SizedBox(
+                  width: 170, // Set the desired width here
+                  height: 45,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: btnStyle,
+                    child: Text(
+                      isLogin ? 'Log in' : 'Sign Up',
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+            
+                const SizedBox(height: 40),
+              ],
+            ),
+          ),
         ),
+        ],
       ),
     ),
   );
