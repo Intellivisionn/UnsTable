@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unstable/pages/home_page.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+import 'package:unstable/pages/welcome_screen.dart';
 
   await Supabase.initialize(
     url: "https://gchpzrrdcleabasvhqhv.supabase.co",
@@ -21,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       title: 'Unstable',
-      home: const HomePage(),
+      home: WelcomeScreen(),
     );
   }
 }
