@@ -10,10 +10,10 @@ class LoginSignupScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    Widget name = const SizedBox(height: 0,); 
+    Widget nameInputField = const SizedBox(height: 0); 
 
   if(!isLogin){
-    name = const TextField(
+    nameInputField = const TextField(
       decoration: InputDecoration(
         labelText: 'Name',
       ),
@@ -45,7 +45,7 @@ class LoginSignupScreen extends StatelessWidget{
               children: [
                 const SizedBox(height: 40),
             
-                name,
+                nameInputField,
         
                 const SizedBox(height: 20),
         

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unstable/pages/home_page.dart';
+import 'package:unstable/pages/home_screen.dart';
 import 'package:unstable/pages/welcome_screen.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       title: 'Unstable',
-      home: WelcomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
