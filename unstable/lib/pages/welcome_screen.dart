@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:unstable/constants/colors.dart';
 import 'package:unstable/pages/login_signup_screen.dart';
+import 'package:unstable/widgets/title_widget.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -14,19 +15,7 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-            const Text('Welcome to',
-              style: TextStyle(
-                fontSize: 34,
-                 fontStyle: FontStyle.italic,
-                ),
-            ),
-
-            const Text('UnsTable',
-              style: TextStyle(
-                fontSize: 38,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            const TitleWidget(),
 
             const SizedBox(height: 50),
 

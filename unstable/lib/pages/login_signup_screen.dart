@@ -1,6 +1,6 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:unstable/constants/colors.dart';
+import 'package:unstable/widgets/title_widget.dart';
 
 class LoginSignupScreen extends StatelessWidget{
   const LoginSignupScreen({super.key, required this.isLogin});
@@ -26,20 +26,10 @@ class LoginSignupScreen extends StatelessWidget{
     body: Center(
       child: Column(
         children: [
-          
-          const Text('Welcome to',
-              style: TextStyle(
-                fontSize: 34,
-                 fontStyle: FontStyle.italic,
-                ),
-            ),
 
-            const Text('UnsTable',
-              style: TextStyle(
-                fontSize: 38,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+          const TitleWidget(),
+
+            const SizedBox(height: 30),
 
           Container(
           width: 300,
