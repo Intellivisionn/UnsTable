@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:unstable/constants/colors.dart';
 import 'package:unstable/pages/login_signup_screen.dart';
 import 'package:unstable/widgets/title_widget.dart';
