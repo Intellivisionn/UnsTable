@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:unstable/constants/colors.dart';
-import 'package:unstable/pages/login_screen.dart';
-import 'package:unstable/pages/signup_screen.dart';
 import 'package:unstable/widgets/title_widget.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -24,7 +22,7 @@ class WelcomeScreen extends StatelessWidget {
               height: 45, 
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+                  Navigator.of(context).pushNamed("/login");
                   },
                   style: btnStyle,
                 child: const Text(
@@ -42,7 +40,7 @@ class WelcomeScreen extends StatelessWidget {
               height: 45, 
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupScreen()));
+                  Navigator.of(context).pushNamed("/signup");
                   },
                   style: btnStyle,
                 child: const Text(
