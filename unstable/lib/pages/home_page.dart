@@ -5,6 +5,7 @@ import 'package:unstable/constants/nav_items.dart';
 import 'package:unstable/constants/size.dart';
 import 'package:unstable/widgets/Desktop/headder_desktop.dart';
 import 'package:unstable/widgets/Desktop/main_desktop.dart';
+import 'package:unstable/widgets/Mobile/clockedin_mobile.dart';
 import 'package:unstable/widgets/Mobile/drawer_mobile.dart';
 import 'package:unstable/widgets/Mobile/headder_mobile.dart';
 
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                 onLogoTap: () {},
                 padding: EdgeInsets.zero,
               ),
-            MainDesktop(),
+            ClockedinMobile(),
             //Info Container
             Container(
               height: 500,

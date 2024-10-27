@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unstable/pages/home_page.dart';
 import 'package:unstable/pages/home_screen.dart';
 import 'package:unstable/pages/welcome_screen.dart';
+import 'package:unstable/widgets/Mobile/main_mobile.dart';
 
 void main() {
   runApp(const MyApp());
