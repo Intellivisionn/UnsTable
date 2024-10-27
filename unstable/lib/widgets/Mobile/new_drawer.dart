@@ -44,6 +44,13 @@ class NewDrawer extends StatelessWidget {
               Navigator.of(context).pop();
             },
           ),
+          ListTile(
+            title: const Text('Welcome screen'),
+            onTap: () {
+              onSelectScreen('4');
+              Navigator.of(context).pop();
+            },
+          ),
         ],
       ),
     );

@@ -69,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
           if (selectedPage == '1') MainMobile(),
           if (selectedPage == '2') MyTables(),
           if (selectedPage == '3') ClockedinMobile(),
+          if (selectedPage == '4') WelcomeScreen(),
         ],
       ),
     );
