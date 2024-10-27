@@ -3,10 +3,10 @@ import 'package:flutter/rendering.dart';
 import 'package:unstable/constants/colors.dart';
 import 'package:unstable/constants/nav_items.dart';
 import 'package:unstable/constants/size.dart';
-import 'package:unstable/widgets/drawer_mobile.dart';
-import 'package:unstable/widgets/headder_desktop.dart';
-import 'package:unstable/widgets/headder_mobile.dart';
-import 'package:unstable/widgets/main_desktop.dart';
+import 'package:unstable/widgets/Desktop/headder_desktop.dart';
+import 'package:unstable/widgets/Desktop/main_desktop.dart';
+import 'package:unstable/widgets/Mobile/drawer_mobile.dart';
+import 'package:unstable/widgets/Mobile/headder_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

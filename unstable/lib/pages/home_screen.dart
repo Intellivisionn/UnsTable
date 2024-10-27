@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unstable/constants/colors.dart';
-import 'package:unstable/widgets/new_drawer.dart';
+import 'package:unstable/widgets/Mobile/main_mobile.dart';
+import 'package:unstable/widgets/Mobile/new_drawer.dart';
 import 'package:unstable/widgets/site_logo.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -53,8 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      body: const Center(
-        child: Text('Home Screen'),
+      body: ListView(
+        children: [
+          MainMobile(),
+        ],
       ),
     );
   }
