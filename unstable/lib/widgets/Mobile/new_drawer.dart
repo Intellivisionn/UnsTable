@@ -23,6 +23,27 @@ class NewDrawer extends StatelessWidget {
                   icon: const Icon(Icons.close)),
             ),
           ),
+          ListTile(
+            title: const Text('Main'),
+            onTap: () {
+              onSelectScreen('1');
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            title: const Text('My tables'),
+            onTap: () {
+              onSelectScreen('2');
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            title: const Text('Clocekd In'),
+            onTap: () {
+              onSelectScreen('3');
+              Navigator.of(context).pop();
+            },
+          ),
         ],
       ),
     );
