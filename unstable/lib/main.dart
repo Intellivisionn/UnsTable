@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:unstable/pages/home_page.dart';
-import 'package:unstable/pages/home_screen.dart';
-import 'package:unstable/pages/welcome_screen.dart';
-import 'package:unstable/widgets/Mobile/main_mobile.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:unstable/pages/initial_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       title: 'Unstable',
-      home: HomeScreen(),
+      home: InitialScreen(),
     );
   }
 }

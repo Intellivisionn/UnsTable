@@ -82,10 +82,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 selectedPage = identifier;
               });
             }),
-          if (selectedPage == '4') const WelcomeScreen(),
-          if (selectedPage == '5') const TablePickerMobile(),
-          if (selectedPage == '6') const RoomPickerMobile(),
-          if (selectedPage == '7') const PreferencesMobile(),
+          if (selectedPage == '4') const TablePickerMobile(),
+          if (selectedPage == '5') const RoomPickerMobile(),
+          if (selectedPage == '6') const PreferencesMobile(),
         ],
       ),
     );
