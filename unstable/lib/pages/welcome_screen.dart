@@ -9,50 +9,52 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const TitleWidget(),
-          const SizedBox(height: 50),
-          SizedBox(
-            width: 170, // Set the desired width here
-            height: 45,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const LoginSignupScreen(isLogin: true)));
-              },
-              style: btnStyle,
-              child: const Text(
-                'Log in',
-                style: TextStyle(color: Colors.white),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const TitleWidget(),
+            const SizedBox(height: 50),
+            SizedBox(
+              width: 170, // Set the desired width here
+              height: 45,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const LoginSignupScreen(isLogin: true)));
+                },
+                style: btnStyle,
+                child: const Text(
+                  'Log in',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          SizedBox(
-            width: 170, // Set the desired width here
-            height: 45,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const LoginSignupScreen(isLogin: false)));
-              },
-              style: btnStyle,
-              child: const Text(
-                'Sign Up',
-                style: TextStyle(color: Colors.white),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: 170, // Set the desired width here
+              height: 45,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const LoginSignupScreen(isLogin: false)));
+                },
+                style: btnStyle,
+                child: const Text(
+                  'Sign Up',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

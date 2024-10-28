@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unstable/constants/colors.dart';
 import 'package:unstable/widgets/title_widget.dart';
+import 'package:unstable/providers/account_provider.dart';
 
-class LoginSignupScreen extends StatelessWidget {
+class LoginSignupScreen extends ConsumerWidget {
   const LoginSignupScreen({super.key, required this.isLogin});
 
   final bool isLogin;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    void login() {
+      ref.read(authProvider.notifier).login(
+          'id'); // here we will put the id of the user so it is globally available
+      Navigator.of(context).pop();
+    }
+
     Widget nameInputField = const SizedBox(height: 0);
 
     if (!isLogin) {
@@ -60,7 +68,7 @@ class LoginSignupScreen extends StatelessWidget {
                       width: 170, // Set the desired width here
                       height: 45,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: login,
                         style: btnStyle,
                         child: Text(
                           isLogin ? 'Log in' : 'Sign Up',

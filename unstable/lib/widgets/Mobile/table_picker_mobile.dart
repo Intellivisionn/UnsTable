@@ -15,7 +15,7 @@ class TablePickerMobile extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 1.2,
       constraints: BoxConstraints(minHeight: 350.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
