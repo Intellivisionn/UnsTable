@@ -35,11 +35,8 @@ class _SignupScreenState extends State<SignupScreen> {
       final user = response.user;
       if (user != null) {
         // Insert into user_profiles table
-        await supabase.from('user').insert({
+        await Supabase.instance.client.rpc('handle_user_signup_public', params: {
           'username': _nameController.text,
-          'is_admin': null, // Optional: explicitly setting fields as null
-          'notifications_enabled': null,
-          'email': null,
         });
 
         ScaffoldMessenger.of(context).showSnackBar(
