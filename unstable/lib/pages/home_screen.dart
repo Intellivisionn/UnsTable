@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unstable/constants/colors.dart';
-import 'package:unstable/widgets/Mobile/room_picker_mobile.dart';
 import 'package:unstable/widgets/Mobile/clockedin_mobile.dart';
+import 'package:unstable/widgets/Mobile/headder_mobile.dart';
 import 'package:unstable/widgets/Mobile/main_mobile.dart';
 import 'package:unstable/widgets/Mobile/myTables_mobile.dart';
 import 'package:unstable/widgets/Mobile/new_drawer.dart';
@@ -18,11 +18,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  var selectedPage = '1';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      drawer: NewDrawer(onSelectScreen: (identifier) {}),
+      drawer: NewDrawer(onSelectScreen: (identifier) {
+        setState(() {
+          selectedPage = identifier;
+        });
+      }),
       appBar: PreferredSize(
         preferredSize:
             const Size.fromHeight(80.0), // Set the desired height here
@@ -38,16 +44,16 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: HeadderDecoration,
               child: Row(
                 children: [
-                  SiteLogoMobile(
-                    onTap: () {},
-                  ),
-                  const Spacer(),
                   IconButton(
                     onPressed: () {
                       scaffoldKey.currentState?.openDrawer();
                     },
                     icon: const Icon(Icons.menu),
                     color: CustomColor.textColor,
+                  ),
+                  const Spacer(),
+                  SiteLogoMobile(
+                    onTap: () {},
                   ),
                   const SizedBox(
                     width: 15,
@@ -60,7 +66,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: ListView(
         children: [
-          TablePickerMobile(),
+          if (selectedPage == '1') MainMobile(),
+          if (selectedPage == '2') MyTables(),
+          if (selectedPage == '3') ClockedinMobile(),
+          if (selectedPage == '4') WelcomeScreen(),
         ],
       ),
     );

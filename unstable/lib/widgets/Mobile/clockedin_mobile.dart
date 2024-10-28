@@ -11,111 +11,113 @@ class ClockedinMobile extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 20),
       height: MediaQuery.of(context).size.height / 1.2,
       constraints: BoxConstraints(minHeight: 350.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 350,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: CustomColor.cardColor,
-                  borderRadius: BorderRadius.circular(10),
+      child: SingleChildScrollView(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 350,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    color: CustomColor.cardColor,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  margin: const EdgeInsets.all(10.0),
+                  child: Center(
+                    child: Text(
+                      '00:00:00', // Placeholder for the timer
+                      style: TextStyle(
+                        fontSize: 48,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.textColor,
+                      ),
+                    ),
+                  ),
                 ),
-                margin: const EdgeInsets.all(10.0),
-                child: Center(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 175,
+                      height: 60,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: btnStyle,
+                          child: const Text(
+                            'Clock Out',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 175,
+                      height: 60,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: btnStyle,
+                          child: const Text(
+                            'Break',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(10.0),
                   child: Text(
-                    '00:00:00', // Placeholder for the timer
+                    "Session spent standing",
                     style: TextStyle(
-                      fontSize: 48,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColor.textColor,
-                    ),
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.textColor,
+                        height: 1.5),
                   ),
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 175,
-                    height: 60,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: btnStyle,
-                        child: const Text(
-                          'Clock Out',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                      ),
-                    ),
+                Container(
+                  width: 300,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    color: CustomColor
+                        .cardColor, // You can change the color as needed
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  SizedBox(
-                    width: 175,
-                    height: 60,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: btnStyle,
-                        child: const Text(
-                          'Break',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                      ),
-                    ),
+                  margin: const EdgeInsets.all(10.0),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text(
+                    "Break Time",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.textColor,
+                        height: 1.5),
                   ),
-                ],
-              ),
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  "Session spent standing",
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColor.textColor,
-                      height: 1.5),
                 ),
-              ),
-              Container(
-                width: 300,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: CustomColor
-                      .cardColor, // You can change the color as needed
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                margin: const EdgeInsets.all(10.0),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  "Break Time",
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColor.textColor,
-                      height: 1.5),
-                ),
-              ),
-              Container(
-                width: 300,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: CustomColor
-                      .cardColor, // You can change the color as needed
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                margin: const EdgeInsets.all(10.0),
-              )
-            ],
-          ),
-        ],
+                Container(
+                  width: 300,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    color: CustomColor
+                        .cardColor, // You can change the color as needed
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  margin: const EdgeInsets.all(10.0),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
