@@ -2,10 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:unstable/constants/colors.dart';
-import 'package:unstable/widgets/drop_down_menu.dart';
 
-class MyTablesMobile extends StatelessWidget {
-  const MyTablesMobile({super.key});
+class PreferencesMobile extends StatelessWidget {
+  const PreferencesMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,39 +23,18 @@ class MyTablesMobile extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Text(
-                    "My Tables",
+                    "My Preferences",
                     style: TextStyle(
-                        fontSize: 48,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColor.textColor,
-                        height: 1.5),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Text(
-                    "Table 1",
-                    style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColor.textColor,
-                        height: 1.5),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Text(
-                    "Room 101",
-                    style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 36,
                         fontWeight: FontWeight.bold,
                         color: CustomColor.textColor,
                         height: 1.5),
                   ),
                 ),
                 Container(
+                  padding: const EdgeInsets.only(top: 20.0),
                   width: 350,
-                  height: 150,
+                  height: 250,
                   decoration: BoxDecoration(
                     color: CustomColor.cardColor,
                     borderRadius: BorderRadius.circular(10),
@@ -64,56 +42,80 @@ class MyTablesMobile extends StatelessWidget {
                   margin: const EdgeInsets.all(10.0),
                   child: Center(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'Book from',
+                              'Sitting height',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: CustomColor.textColor,
                               ),
                             ),
-                            SizedBox(width: 50),
-                            DropDownMenu(),
+                            Container(
+                              width: 100,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'cm',
+                                  border: OutlineInputBorder(),
+                                ),
+                                keyboardType: TextInputType.number,
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(height: 20),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'Book until',
+                              'Standing height',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: CustomColor.textColor,
                               ),
                             ),
-                            SizedBox(width: 50),
-                            DropDownMenu(),
+                            Container(
+                              width: 100,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'cm',
+                                  border: OutlineInputBorder(),
+                                ),
+                                keyboardType: TextInputType.number,
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(height: 20),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              'Break Reminder',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: CustomColor.textColor,
+                              ),
+                            ),
+                            Container(
+                              width: 100,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'minutes',
+                                  border: OutlineInputBorder(),
+                                ),
+                                keyboardType: TextInputType.number,
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 175,
-                  height: 60,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: btnStyle,
-                      child: const Text(
-                        'Clock In',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
                     ),
                   ),
                 ),

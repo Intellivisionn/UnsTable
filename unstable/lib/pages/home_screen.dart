@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:unstable/constants/colors.dart';
+import 'package:unstable/pages/welcome_screen.dart';
 import 'package:unstable/widgets/Mobile/clockedin_mobile.dart';
 import 'package:unstable/widgets/Mobile/headder_mobile.dart';
 import 'package:unstable/widgets/Mobile/main_mobile.dart';
 import 'package:unstable/widgets/Mobile/myTables_mobile.dart';
 import 'package:unstable/widgets/Mobile/new_drawer.dart';
+import 'package:unstable/widgets/Mobile/preferences_mobile.dart';
+import 'package:unstable/widgets/Mobile/room_picker_mobile.dart';
 import 'package:unstable/widgets/Mobile/table_picker_mobile.dart';
 import 'package:unstable/widgets/site_logo.dart';
 
@@ -67,9 +70,12 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: [
           if (selectedPage == '1') MainMobile(),
-          if (selectedPage == '2') MyTables(),
+          if (selectedPage == '2') MyTablesMobile(),
           if (selectedPage == '3') ClockedinMobile(),
           if (selectedPage == '4') WelcomeScreen(),
+          if (selectedPage == '5') TablePickerMobile(),
+          if (selectedPage == '6') RoomPickerMobile(),
+          if (selectedPage == '7') PreferencesMobile(),
         ],
       ),
     );
