@@ -69,13 +69,23 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: ListView(
         children: [
-          if (selectedPage == '1') MainMobile(),
-          if (selectedPage == '2') MyTablesMobile(),
-          if (selectedPage == '3') ClockedinMobile(),
-          if (selectedPage == '4') WelcomeScreen(),
-          if (selectedPage == '5') TablePickerMobile(),
-          if (selectedPage == '6') RoomPickerMobile(),
-          if (selectedPage == '7') PreferencesMobile(),
+          if (selectedPage == '1')
+            MainMobile(onSelectPage: (identifier) {
+              setState(() {
+                selectedPage = identifier;
+              });
+            }),
+          if (selectedPage == '2') const MyTablesMobile(),
+          if (selectedPage == '3')
+            ClockedinMobile(onSelectPage: (identifier) {
+              setState(() {
+                selectedPage = identifier;
+              });
+            }),
+          if (selectedPage == '4') const WelcomeScreen(),
+          if (selectedPage == '5') const TablePickerMobile(),
+          if (selectedPage == '6') const RoomPickerMobile(),
+          if (selectedPage == '7') const PreferencesMobile(),
         ],
       ),
     );

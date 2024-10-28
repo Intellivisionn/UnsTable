@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:unstable/constants/colors.dart';
 
 class ClockedinMobile extends StatelessWidget {
-  const ClockedinMobile({super.key});
+  final Function(String) onSelectPage;
+
+  const ClockedinMobile({super.key, required this.onSelectPage});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,9 @@ class ClockedinMobile extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            onSelectPage('1');
+                          },
                           style: btnStyle,
                           child: const Text(
                             'Clock Out',

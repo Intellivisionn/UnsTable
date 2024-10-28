@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:unstable/constants/colors.dart';
 
 class MainMobile extends StatelessWidget {
-  const MainMobile({super.key});
+  final Function(String) onSelectPage;
+
+  const MainMobile({super.key, required this.onSelectPage});
 
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
       height: MediaQuery.of(context).size.height / 1.2,
-      constraints: BoxConstraints(minHeight: 350.0),
+      constraints: const BoxConstraints(minHeight: 350.0),
       child: SingleChildScrollView(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -24,7 +26,10 @@ class MainMobile extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        onSelectPage(
+                            '2'); // Change to the page identifier for MyTablesMobile
+                      },
                       style: btnStyle,
                       child: const Text(
                         'Clock In',
@@ -63,8 +68,7 @@ class MainMobile extends StatelessWidget {
                   width: 300,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: CustomColor
-                        .cardColor, // You can change the color as needed
+                    color: CustomColor.cardColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   margin: const EdgeInsets.all(10.0),
@@ -84,8 +88,7 @@ class MainMobile extends StatelessWidget {
                   width: 300,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: CustomColor
-                        .cardColor, // You can change the color as needed
+                    color: CustomColor.cardColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   margin: const EdgeInsets.all(10.0),
