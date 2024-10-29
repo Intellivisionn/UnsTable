@@ -12,10 +12,10 @@ class AuthNotifier extends StateNotifier<bool> {
       _enteredId = id;
       state = true;
     }
+  }
 
-    void logout() {
-      state = false;
-    }
+  void logout() {
+    state = false;
   }
 }
 

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unstable/constants/colors.dart';
+import 'package:unstable/providers/account_provider.dart';
 
-class NewDrawer extends StatelessWidget {
+class NewDrawer extends ConsumerWidget {
   const NewDrawer({super.key, required this.onSelectScreen});
 
   final void Function(String identifier) onSelectScreen;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final _authNotifier = ref.read(authProvider.notifier);
     return Drawer(
       backgroundColor: CustomColor.scaffoldBg,
       child: ListView(
@@ -62,6 +65,14 @@ class NewDrawer extends StatelessWidget {
             title: const Text('Preferences'),
             onTap: () {
               onSelectScreen('6');
+              Navigator.of(context).pop();
+            },
+          ),
+          const Divider(),
+          ListTile(
+            title: const Text('Log out'),
+            onTap: () {
+              _authNotifier.logout();
               Navigator.of(context).pop();
             },
           ),
