@@ -8,20 +8,21 @@ class MainMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width;
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: MediaQuery.of(context).size.height / 1.2,
-      constraints: const BoxConstraints(minHeight: 350.0),
-      child: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        var screenWidth = constraints.maxWidth;
+        var isSmallScreen = screenWidth < 600;
+
+        return Container(
+          margin: const EdgeInsets.symmetric(horizontal: 20),
+          height: MediaQuery.of(context).size.height / 1.2,
+          constraints: const BoxConstraints(minHeight: 350.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
-                  width: 285,
+                  width: isSmallScreen ? screenWidth * 0.8 : 285,
                   height: 85,
                   child: Padding(
                     padding: const EdgeInsets.all(15.0),
@@ -39,7 +40,7 @@ class MainMobile extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 285,
+                  width: isSmallScreen ? screenWidth * 0.8 : 285,
                   height: 85,
                   child: Padding(
                     padding: const EdgeInsets.all(15.0),
@@ -65,7 +66,7 @@ class MainMobile extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 300,
+                  width: isSmallScreen ? screenWidth * 0.9 : 300,
                   height: 150,
                   decoration: BoxDecoration(
                     color: CustomColor.cardColor,
@@ -85,7 +86,7 @@ class MainMobile extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 300,
+                  width: isSmallScreen ? screenWidth * 0.9 : 300,
                   height: 150,
                   decoration: BoxDecoration(
                     color: CustomColor.cardColor,
@@ -95,9 +96,9 @@ class MainMobile extends StatelessWidget {
                 )
               ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

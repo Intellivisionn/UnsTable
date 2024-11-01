@@ -8,20 +8,19 @@ class ClockedinMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width;
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20),
-      height: MediaQuery.of(context).size.height / 1.2,
-      constraints: BoxConstraints(minHeight: 350.0),
-      child: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        var screenWidth = constraints.maxWidth;
+        return Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          height: MediaQuery.of(context).size.height / 1.2,
+          constraints: BoxConstraints(minHeight: 350.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                  width: 350,
+                  width: screenWidth * 0.9,
                   height: 150,
                   decoration: BoxDecoration(
                     color: CustomColor.cardColor,
@@ -42,9 +41,7 @@ class ClockedinMobile extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      width: 175,
-                      height: 60,
+                    Flexible(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
@@ -59,9 +56,7 @@ class ClockedinMobile extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 175,
-                      height: 60,
+                    Flexible(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
@@ -88,11 +83,10 @@ class ClockedinMobile extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 300,
+                  width: screenWidth * 0.8,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: CustomColor
-                        .cardColor, // You can change the color as needed
+                    color: CustomColor.cardColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   margin: const EdgeInsets.all(10.0),
@@ -109,20 +103,19 @@ class ClockedinMobile extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 300,
+                  width: screenWidth * 0.8,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: CustomColor
-                        .cardColor, // You can change the color as needed
+                    color: CustomColor.cardColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   margin: const EdgeInsets.all(10.0),
                 )
               ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

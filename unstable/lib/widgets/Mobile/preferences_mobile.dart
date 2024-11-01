@@ -8,17 +8,16 @@ class PreferencesMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width;
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20),
-      height: MediaQuery.of(context).size.height / 1.2,
-      constraints: BoxConstraints(minHeight: 350.0),
-      child: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        var screenWidth = constraints.maxWidth;
+        return Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          height: MediaQuery.of(context).size.height / 1.2,
+          constraints: BoxConstraints(minHeight: 350.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Padding(
                   padding: EdgeInsets.all(10.0),
@@ -33,7 +32,7 @@ class PreferencesMobile extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.only(top: 20.0),
-                  width: 350,
+                  width: screenWidth * 0.9,
                   height: 250,
                   decoration: BoxDecoration(
                     color: CustomColor.cardColor,
@@ -45,7 +44,7 @@ class PreferencesMobile extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'Sitting height',
@@ -56,7 +55,7 @@ class PreferencesMobile extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              width: 100,
+                              width: screenWidth * 0.3,
                               child: TextField(
                                 decoration: InputDecoration(
                                   hintText: 'cm',
@@ -69,7 +68,7 @@ class PreferencesMobile extends StatelessWidget {
                         ),
                         SizedBox(height: 20),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'Standing height',
@@ -80,7 +79,7 @@ class PreferencesMobile extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              width: 100,
+                              width: screenWidth * 0.3,
                               child: TextField(
                                 decoration: InputDecoration(
                                   hintText: 'cm',
@@ -93,7 +92,7 @@ class PreferencesMobile extends StatelessWidget {
                         ),
                         SizedBox(height: 20),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'Break Reminder',
@@ -104,7 +103,7 @@ class PreferencesMobile extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              width: 100,
+                              width: screenWidth * 0.3,
                               child: TextField(
                                 decoration: InputDecoration(
                                   hintText: 'minutes',
@@ -121,9 +120,9 @@ class PreferencesMobile extends StatelessWidget {
                 ),
               ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
